@@ -1,3 +1,5 @@
+package sort;
+
 import java.util.Arrays;
 
 /**
@@ -9,10 +11,10 @@ import java.util.Arrays;
  */
 public class BubbleSort {
 
-   public static  int[] bubbleSort (int[] arr){
+   public static void bubbleSort (int[] arr){
        //边界处理
        if (arr.length == 1) {
-           return arr;
+           return ;
        }
 
        for (int i=0; i<arr.length; i++) {
@@ -31,13 +33,11 @@ public class BubbleSort {
                }
            }
        }
-
-       return arr;
    }
 
     public static void main(String[] args) {
         int[] arr = {2,5,1,6,7,4};
-        arr = bubbleSort(arr);
+        bubbleSort(arr);
         System.out.print(Arrays.toString(arr));
     }
 }

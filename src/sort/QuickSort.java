@@ -1,3 +1,5 @@
+package sort;
+
 import java.util.Arrays;
 
 /**
@@ -7,12 +9,11 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void quickSort(int[] arr, int left, int right) {
-        if (left >= right) {
-            return;
-        }
-        int p = partition(arr,left,right);
-        quickSort(arr,left,p-1);
-        quickSort(arr,p+1,right);
+       if (left < right) {
+           int p = partition(arr,left,right);
+           quickSort(arr,left,p-1);
+           quickSort(arr,p+1,right);
+       }
     }
 
     private static int partition(int[] arr, int left, int right) {
@@ -39,7 +40,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2,5,1,6,7,4};
+        int[] arr = {2,5,3,6,7,4};
         quickSort(arr,0,arr.length-1);
         System.out.print(Arrays.toString(arr));
     }

@@ -1,3 +1,5 @@
+package sort;
+
 import java.util.Arrays;
 
 /**
@@ -8,9 +10,9 @@ import java.util.Arrays;
  * 稳定性：不稳定
  */
 public class SelectionSort {
-    public static int[] selectSort(int[] arr) {
+    public static void selectSort(int[] arr) {
         if (arr.length == 1){
-            return arr;
+            return;
         }
         for(int i=0; i<arr.length-1; ++i) {
           //查找最小值
@@ -24,12 +26,11 @@ public class SelectionSort {
             arr[i] = arr[minIndex];
             arr[minIndex] = tmp;
         }
-        return arr;
     }
 
     public static void main(String[] args) {
         int[] arr = {2,5,1,6,7,4};
-        arr = selectSort(arr);
+        selectSort(arr);
         System.out.print(Arrays.toString(arr));
     }
 }

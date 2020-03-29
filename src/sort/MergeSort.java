@@ -1,3 +1,5 @@
+package sort;
+
 import org.w3c.dom.html.HTMLParagraphElement;
 
 import java.util.Arrays;
@@ -14,7 +16,7 @@ public class MergeSort {
     public static void mergeSort(int[] arr,int left,int right) {
         //直至只剩一个元素
         if (left < right) {
-            int middle = (left+right)/2;
+            int middle = left + (right - left)/2;
             //递归
             mergeSort(arr,left,middle);
             mergeSort(arr,middle+1,right);
